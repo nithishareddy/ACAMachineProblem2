@@ -51,15 +51,14 @@ if __name__ == "__main__":
         for arg in sys.argv:
             print(arg)
         predictor = sys.argv[1]
-        print("predictor",predictor)
-        f=open(sys.argv[3],"r")
-        inputData = []
-        for input in f:
-            splitdata = input.split()
-            if len(splitdata)>=2:
-                inputData.append(splitdata[1].strip())
-        f.close()
         if predictor=="smith":
+            f=open(sys.argv[3],"r")
+            inputData = []
+            for input in f:
+                splitdata = input.split()
+                if len(splitdata)>=2:
+                    inputData.append(splitdata[1].strip())
+            f.close()
             simulateSmithCounter(sys.argv,inputData)
                       
         else :
